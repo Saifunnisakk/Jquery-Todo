@@ -3,9 +3,7 @@ $(document).ready(function () {
 
   fetchTasks();
 
-  // Form submission
-  $("#taskForm").submit(function (e) {
-    e.preventDefault();
+  $("#addTask").click(function () {
     const taskType = $("#type").val();
     const taskTitle = $("#title").val();
     const taskStatus = $("#status").val();
@@ -79,7 +77,6 @@ $(document).ready(function () {
         type: type,
         title: title,
         status: status,
-        completed: false,
       }),
       success: function () {
         fetchTasks();
@@ -87,7 +84,6 @@ $(document).ready(function () {
         $("#title").val("");
         $("#status").val("");
       },
-
       error: function (error) {
         console.error("Error adding task:", error);
       },
