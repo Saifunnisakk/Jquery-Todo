@@ -1,0 +1,102 @@
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+}
+
+#app {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input,
+select,
+button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input,
+select {
+  width: 100%;
+}
+
+button {
+  background-color: #4caf50;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#taskList {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0 0;
+}
+
+li {
+  background-color: #fff;
+  margin-bottom: 5px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.completedTask {
+  background-color: #f0f0f0;
+  text-decoration: line-through;
+}
+
+.buttonContainer button {
+  margin-left: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.updateButton {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+}
+
+.deleteButton {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+}
+
+.updateButton:hover,
+.deleteButton:hover {
+  filter: brightness(0.8);
+}
+#taskList li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px; /* Adjust the padding as needed */
+  border: 1px solid #ccc; /* Optional border for better visibility */
+  margin: 4px 0; /* Adjust the margin as needed */
+}
