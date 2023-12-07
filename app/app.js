@@ -1,7 +1,6 @@
 $(document).ready(function () {
   const apiUrl = "http://localhost:4001/api/tasks";
 
-  // Fetch tasks on page load
   fetchTasks();
 
   // Form submission
@@ -18,7 +17,6 @@ $(document).ready(function () {
     }
   });
 
-  // Function to fetch tasks from the server
   function fetchTasks() {
     $.get(apiUrl)
       .done(function (response) {
@@ -47,10 +45,9 @@ $(document).ready(function () {
         listItem.addClass("completedTask");
       }
 
-      // Create a div to hold both buttons
       const buttonContainer = $("<div>").addClass("buttonContainer");
 
-      // Add Update button with different color
+      // Update button
       const updateButton = $("<button>")
         .text("Update")
         .addClass("updateButton")
@@ -58,7 +55,7 @@ $(document).ready(function () {
           updateTaskPrompt(task._id, task.type, task.title, task.status);
         });
 
-      // Add Delete button with different color
+      // Delete button
       const deleteButton = $("<button>")
         .text("Delete")
         .addClass("deleteButton")
@@ -66,16 +63,12 @@ $(document).ready(function () {
           deleteTask(task._id);
         });
 
-      // Append buttons to the div
       buttonContainer.append(updateButton, deleteButton);
 
-      // Append the div to the list item
       listItem.append(buttonContainer);
       taskList.append(listItem);
     });
   }
-
-  // Function to add a new task
   // Function to add a new task
   function addTask(type, title, status) {
     $.ajax({
@@ -115,7 +108,6 @@ $(document).ready(function () {
     });
   }
 
-  // Function to toggle task completion
   function toggleTaskCompletion(id, completed) {
     $.ajax({
       url: `${apiUrl}/${id}`,
@@ -131,7 +123,6 @@ $(document).ready(function () {
     });
   }
 
-  // Function to prompt the user for an updated task
   function updateTaskPrompt(id, currentType, currentTitle, currentStatus) {
     const updatedType = prompt("Update task type:", currentType);
     const updatedTitle = prompt("Update task title:", currentTitle);
